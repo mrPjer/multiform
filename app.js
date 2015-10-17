@@ -1,7 +1,13 @@
 var express = require('express');
+var fs = require('fs');
+
+var httpsOptions = {
+	key: fs.readFileSync(__dirname + '/server.key'),
+	cert: fs.readFileSync(__dirname + '/server.crt')
+}
 
 var app = express();
-var server = require('http').createServer(app);
+var server = require('https').createServer(httpsOptions, app);
 var io = require('socket.io')(server);
 
 var data = {};
