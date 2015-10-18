@@ -15,3 +15,7 @@ Run the server with `node app.js`
 ### Client
 
 Simply paste the Javascript snippet from client-connect.js into your favorite browser. Remember to update the server URL if you are not serving this from localhost.
+
+## License
+
+This project is released under the GPLv3 license. The terms of the license are available in the file `LICENSE`.
