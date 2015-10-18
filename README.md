@@ -2,7 +2,7 @@
 
 This is a small utility that allows multiple clients to work on the same HTML form with realtime updates.
 
-[![Screencast](support/screencast.gif)](support/screencast.webm)
+[![Screencast](support/screencast.gif)](support/screencast.webm?raw=true)
 
 ## Usage
 
