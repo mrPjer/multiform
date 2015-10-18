@@ -21,9 +21,11 @@ io.on('connection', function(socket) {
 		 * {
 		 * 	url,
 		 * 	input: {
+		 * 		id,
 		 *			name,
 		 *			type,
-		 *			value
+		 *			value,
+		 *			checked
 		 * 	}
 		 */
 		console.log("Received form-update from " + ip);
