@@ -10,11 +10,19 @@ var app = express();
 var server = require('https').createServer(httpsOptions, app);
 var io = require('socket.io')(server);
 
-var data = {};
+var storedData = {};
 
 io.on('connection', function(socket) {
 	var ip = socket.request.connection.remoteAddress;
 	console.log("Connect from " + ip);
+
+	socket.on('request-data', function(pageUrl) {
+		response = storedData[pageUrl];
+		console.log("Request-data");
+		console.log(pageUrl);
+		console.log(response);
+		socket.emit('stored-data', response);
+	});
 
 	socket.on('form-update', function(data) {
 		/*
@@ -31,6 +39,10 @@ io.on('connection', function(socket) {
 		console.log("Received form-update from " + ip);
 		console.log(data);
 		socket.broadcast.emit('form-update', data);
+		if(!storedData[data.url]) {
+			storedData[data.url] = {};
+		}
+		storedData[data.url][data.input.name] = data.input;
 	});
 
 	socket.on('disconnect', function() {
