@@ -20,4 +20,4 @@ Simply paste the Javascript snippet from client-connect.js into your favorite br
 
 ## License
 
-This project is released under the GPLv3 license. The terms of the license are available in the file `LICENSE`.
+This project is released under the GPLv3 license. The terms of the license are available in the file [LICENSE.txt](LICENSE.txt).
